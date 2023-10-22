@@ -21,7 +21,7 @@ _Opportunity is a platform for managing vacancies on Campus IV, whose objective 
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## 📌 Functionalities
+## 📌 Features
 ```
 1° Registration verification by email
 2° Registration of CAMPUS IV vacancies
