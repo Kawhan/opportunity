@@ -1,4 +1,21 @@
 {
   "projectName": "readopportunity",
-  "projectOwner": "Kawhan"
+  "projectOwner": "Kawhan",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "Kawhan",
+      "name": "Kawhan Laurindo de Lima",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69232156?v=4",
+      "profile": "https://www.linkedin.com/in/kawhan-laurindo-de-lima-b61a7a1b4/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
 }
