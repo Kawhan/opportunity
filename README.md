@@ -38,6 +38,8 @@ Ubuntu use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides
 2° Configure project to start locally <br/>
 <ol align="left">
   <li>In the project opportunities folder, change the settings file by changing the following lines:</li>
+
+  Using this secret key: 04mj9!%$0s7br@7(zcrqzd8m544pq)_fp@0kciipdphgc-^9#% or generate using this <a href="https://www.educative.io/answers/how-to-generate-a-django-secretkey">Site</a> 
 </ol>
 
 3° Run the project <br/>
@@ -46,5 +48,7 @@ Ubuntu use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides
   <li>Install all dependencies using the command: pip install -r requirements.txt</li>
   <li>Start the project using the command: python manage.py runserver</li>
 </ol>
+
+
 
 </div>
