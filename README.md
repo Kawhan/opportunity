@@ -35,7 +35,7 @@ _Opportunity is a platform for managing vacancies on Campus IV, whose objective 
 Windows use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/">Tutorial</a> </br>
 Ubuntu use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-20-04-quickstart)https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-20-04-quickstart">Tutorial</a> <br/>
 
-2° Install docker
+2° Install docker <br/>
 Windows Docker Desktop: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/](https://www.docker.com/products/docker-desktop/">Dowload</a> </br>
 Ubuntu use this tutorial: <a href="https://docs.docker.com/engine/install/ubuntu/">Tutorial</a> <br/>
 
