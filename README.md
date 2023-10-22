@@ -21,4 +21,34 @@ _Opportunity is a platform for managing vacancies on Campus IV, whose objective 
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
+## 📌 Functionalities
+```
+1° Registration verification by email
+2° Registration of CAMPUS IV vacancies
+3° Check the interest of students on campus
+4° analytical part of the system
+```
+
+## 🤖 Run project
+
+
+1° Create virtual ambient <br/>
+Windows use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/">Tutorial</a> </br>
+Ubuntu use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-20-04-quickstart)https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-20-04-quickstart">Tutorial</a> <br/>
+
+2° Configure project to start locally <br/>
+
+<ol align="left">
+  <li>In the project opportunities folder, change the settings file by changing the following lines:</li>
+  
+</ol>
+
+
+3° Run the project <br/>
+<ol align="left">
+  <li>Activate the virtual environment</li>
+  <li>Install all dependencies using the command: pip install -r requirements.txt</li>
+  <li>Start the project using the command: python manage.py runserver</li>
+</ol>
+
 </div>
