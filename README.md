@@ -43,8 +43,8 @@ Ubuntu use this tutorial: <a href="https://docs.docker.com/engine/install/ubuntu
 <ol align="left">
   <li>In the project opportunities folder, change the settings file by changing the following lines by uncommenting:</li>
   <img src=".github/assets/tcc_1.png"/>
-  <li>Create docker-compose using this lines</li>
-  <img src=".github/assets/tcc_1.png"/>
+  <li>Alter docker-compose and set this lines</li>
+  <img src=".github/assets/TCC_2.png"/>
 </ol>
 
 4° Run the project <br/>
