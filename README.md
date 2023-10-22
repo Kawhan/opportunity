@@ -35,14 +35,19 @@ _Opportunity is a platform for managing vacancies on Campus IV, whose objective 
 Windows use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/">Tutorial</a> </br>
 Ubuntu use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/](https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-20-04-quickstart)https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-ubuntu-20-04-quickstart">Tutorial</a> <br/>
 
-2° Configure project to start locally <br/>
-<ol align="left">
-  <li>In the project opportunities folder, change the settings file by changing the following lines:</li>
+2° Install docker
+Windows Docker Desktop: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/](https://www.docker.com/products/docker-desktop/">Dowload</a> </br>
+Ubuntu use this tutorial: <a href="https://docs.docker.com/engine/install/ubuntu/">Tutorial</a> <br/>
 
-  Using this secret key: 04mj9!%$0s7br@7(zcrqzd8m544pq)_fp@0kciipdphgc-^9#% or generate using this <a href="https://www.educative.io/answers/how-to-generate-a-django-secretkey">Site</a> 
+3° Configure project to start locally <br/>
+<ol align="left">
+  <li>In the project opportunities folder, change the settings file by changing the following lines by uncommenting:</li>
+  <img src=".github/assets/tcc_1.png"/>
+  <li>Create docker-compose using this lines</li>
+  <img src=".github/assets/tcc_1.png"/>
 </ol>
 
-3° Run the project <br/>
+4° Run the project <br/>
 <ol align="left">
   <li>Activate the virtual environment</li>
   <li>Install all dependencies using the command: pip install -r requirements.txt</li>
