@@ -40,18 +40,24 @@ Ubuntu use this tutorial: <a href="https://www.codingforentrepreneurs.com/guides
 Windows Docker Desktop: <a href="https://www.codingforentrepreneurs.com/guides/install-python-on-windows/](https://www.docker.com/products/docker-desktop/">Dowload</a> </br>
 Ubuntu use this tutorial: <a href="https://docs.docker.com/engine/install/ubuntu/">Tutorial</a> <br/>
 
-3° Configure project to start locally <br/>
+3° Env files<br/>
+
 <ol align="left">
-  <li>In the project opportunities folder, change the settings file by changing the following lines by uncommenting:</li>
+  <li>Before proceeding you need to hire someone system administrator so that you have access to the env containing additional information, the env was not added for security measure.</li>
+  <li>Please speak to someone to contribute to gain access to the env</li>
+</ol>
+
+
+4° Configure project to start locally <br/>
+<ol align="left">
+  <li>In the project opportunities folder, you have a docker-compose file that contains information about the database, to run the project you need this image to be run:</li>
   <img src=".github/assets/tcc_1.png"/>
-  <li>Alter docker-compose and set this lines</li>
-  <img src=".github/assets/TCC_2.png"/>
   <li>Run docker-compose up in same directory</li>
 </ol>
 
-4° Run the project <br/>
+5° Run the project <br/>
 <ol align="left">
-  <li>Activate the virtual environment</li>
+  <li>Activate the virtual environment, this information on how to activate the virtual environment can be accessed through this tutorial: <a href="https://ioflood.com/blog/python-activate-venv/#:~:text=Activating%20a%20virtual%20environment%20in%20Python%20is%20straightforward.,directory%20of%20your%20virtual%20environment.">Tutorial</a></li>
   <li>Install all dependencies using the command: pip install -r requirements.txt</li>
   <li>Start the project using the command: python manage.py runserver</li>
 </ol>
