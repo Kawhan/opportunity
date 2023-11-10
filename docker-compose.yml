@@ -1,6 +1,18 @@
 version: '3.8'
 name: opportunity_full
 services:
+  django:
+    build: .
+    container_name: django_full
+    volumes:
+      - .:/usr/src/app
+      - static_volume:/staticfiles
+    env_file:
+      - ./opportunity/.env
+    ports:
+      - "81:8000"
+    depends_on:
+      - pgdb
   pgdb:
     image: "postgres:latest"
     container_name: pgdb
@@ -11,8 +23,8 @@ services:
     volumes:
       - /volumes/pgdata:/var/lib/postgresql/data/
       - ./migration/docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql 
-    # ports:
-    #   - "5432:5432"
+    ports:
+      - "5432:5432"
 volumes:
   pgdata:
     driver: local
