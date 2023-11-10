@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+{% comment %} <div class="container">
+  <div class="row">
+    <div class="chartCard col-lg-12 col-md-12 col-sm-12">
+        <div class="card  chartBox mx-2">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div  class="card  chartBox">
+            <canvas id="myChart2"></canvas>
+        </div>
+        <div  class="card  chartBox mx-2">
+            <canvas id="myChart3"></canvas>
+        </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+<div class="container">
+  <div class="row">
+    <div class="grapics-card mb-2 mx-auto col-xl-10 col-xxl-4 col-md-8 col-lg-8 col-sm-12 col-12">
+      <div class="card shadow-2-strong">
+        <div class="card-body">
+            <p class="text-uppercase mb-2"><strong>Quantidade de Interesses</strong></p>
+            <hr />
+            <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+
+
+  
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  
+  <script>
+
+
+    
+    const ctx = document.getElementById('myChart');
+    
+    
+    
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['interessados de LCC', 'interessados de SI'],
+        datasets: [{
+          label: 'Vagas',
+          data: [{{ data.alunos_LCC|safe }}, {{ data.alunos_SI|safe }}],
+          borderWidth: 1
+        }]
+      },
+      plugins: [ChartDataLabels],
+      options: {
+        responsive: true,
+        aspectRatio: 1,
+        plugins: {
+          // Change options for ALL labels of THIS CHART
+          datalabels: {
+              color: 'black',
+              font: {
+                size: 17
+              }
+          }
+        }
+      }
+    });
+
+
+
+    
+
+
+    </script>
+    
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div class="container">
+    <div class="row"></div>
+    <div class="row">
+        {% if vagas %}
+        {% for vaga in vagas %}
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4  col-xs-8 col-sm-12 mb-2">
+            <div class="card card mx-auto border-0 bg-light rounded shadow-sm mt-4 mb-2 my-card-div ">
+                <div class="card-body my-card-2 p-3">
+                    {% if vaga.is_closed %}
+                    <div class="hearth-new">
+                        <div class="title-new with-css">
+                            <h5 class="my-card-title-new" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ vaga.tituloVaga}}">{{ vaga.tituloVaga}}</h5>
+                        </div>
+                        <div class="icon-text">
+                            <span class="badge rounded-pill float-md-end mb-2 mb-lg-0 color-button-close">Fechada</span>
+                        </div>
+                    </div>
+                    <hr>
+                    {% else %}
+                    <div class="hearth-new">
+                        <div class="title-new with-css">
+                            <h5 class="my-card-title-new" data-bs-toggle="tooltip" data-bs-placement="bottom" title="{{ vaga.tituloVaga}}">{{ vaga.tituloVaga}}</h5>
+                        </div>
+                        <div class="icon-text">
+                            {% if user.user_is_teacher %}
+                            {% else %}
+                            {% if user_info in vaga.aluno.all %}
+                                <a href="{% url 'retirar_inscricao' vaga.id %}" class="my-button-hearth mx-2"><i class="fa-solid fa-heart red-color"></i></a>
+                            {% else %}
+                                <a href="{% url 'inscrever_aluno' vaga.id %}" class="my-button-hearth mx-2"><i class="fa-regular fa-heart white"></i></a>
+                            {% endif %}
+                            {% endif %}
+                            <span class="badge rounded-pill float-md-end mb-2 mb-lg-0  color-button-green">Aberta</span>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endif %}
+                    <div class="">
+                        <div class="my-content">
+                            <span>Número de Vagas: <span class="text-aside">{{ vaga.numeroVagas }}</span></span>
+                            {% if vaga.tipo_vaga == "PIC" %}
+                            <span class="">Tipo vaga: <span class="text-aside">Projeto de iniciação científica</span></span>
+                            {% elif vaga.tipo_vaga == "PIT" %}
+                            <span class="">Tipo vaga: <span class="text-aside">Projeto de iniciação tecnológica</span></span>
+                            {% elif vaga.tipo_vaga == "PE" %}
+                            <span>Tipo vaga: <span class="text-aside">Projeto de Extensão</span></span>
+                            {% elif vaga.tipo_vaga == 'ES' %}
+                            <span>Tipo vaga: <span class="text-aside">Estágio</span></span>
+                            {% elif vaga.tipo_vaga == 'PD' %}
+                            <span>Tipo vaga: <span class="text-aside">Projeto de desenvolvimento</span></span>
+                            {% endif %}
+                            {% if vaga.link_empresa_ou_pesquisa != None %}
+                            <span>Empresa/Grupo de pesquisa: <a class="text-aside" target="_blank"  href="{{vaga.link_empresa_ou_pesquisa}}"><span class="text-aside">{{ vaga.nome_empresa }}</span></a></span>
+                            {% else %}
+                            <span>Empresa/Grupo de pesquisa:<span class="text-aside">{{ vaga.nome_empresa }}</span></span>
+                            {% endif %}
+                            <span>Área da vaga: <span class="text-aside">{{ vaga.get_area_display }}</span></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="div-center">
+                        <div class="number-int-div">
+                            <span class="number-int">{{ vaga.aluno.all.count }}</span>
+                            <i class="fa-solid fa-heart red-color"></i>
+                        </div>
+                        <div class="mycontent-left">
+                        </div>
+                        <div class="col-8 col-md-8 col-sm-8 col-lg-6 div-center-content">
+                            <a href="{% url 'view_vaga' vaga.id %}" class="btn btn-primary rouded-button">Descrição da Vaga</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+            <div class="no-found">
+                <h1>Nenhuma vaga de projeto de desenvolvimento cadastrada</h1>
+            </div>
+            
+        {% endif %}
+    </div>
+</div>
+</div>
+
+{% include "partials/_paginator.html" %}
+
+{% endblock %}

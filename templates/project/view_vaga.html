@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% load humanize %}
+{% load static %}
+{% block content %}
+<div class="content-section color-body class-rouder p-3 mt-4 mb-2">
+
+    <div class="container mt-3">
+        <section>
+            <h1 class="title">{{ vaga.tituloVaga }}</h1>
+            <div class="my-info-div">
+                <div>
+                    {% if vaga.tipo_vaga == "PIC" %}
+                    <h5><span>Tipo:</span> Projeto de iniciação científica</h5>
+                    {% elif vaga.tipo_vaga == "PIT" %}
+                    <h5><span>Tipo:</span> Projeto de iniciação tecnológica</h5>
+                    {% elif vaga.tipo_vaga == "PE" %}
+                    <h5><span>Tipo:</span>Projeto de Extensão</h5>
+                    {% elif vaga.tipo_vaga == 'ES' %}
+                    <h5><span>Tipo: </span>Estágio</h5>
+                    {% elif vaga.tipo_vaga == 'PD' %}
+                    <h5><span>Tipo: </span>Projeto de desenvolvimento</h5>
+                    {% endif %}
+                    <h5><span>Área da vaga:</span> {{ vaga.get_area_display }} </h5>
+                    <h5><span>Período de inscrição: </span>{{ vaga.dataCadastro  }} <span>até</span> {{ vaga.dataFechamento   }}</h5>
+                    <h5><span>Horas semanais:</span>  {{ vaga.horasSemana }} horas</h5>
+                    <h5><span>Número de vagas:</span> {{ vaga.numeroVagas }} vaga(s)</h5>
+                    <h5><span>Valor da bolsa:</span> R$ {{ vaga.valorSalario|floatformat:2|intcomma }}</h5>
+                    {% if vaga.link_empresa_ou_pesquisa != None %}
+                    <h5><span>Empresa/Grupo de pesquisa:</span> <a class="text-aside" target="_blank"  href="{{vaga.link_empresa_ou_pesquisa}}">{{ vaga.nome_empresa }}</a></h5>
+                    {% else %}
+                    <h5><span>Empresa/Grupo de pesquisa:</span> {{ vaga.nome_empresa }}</h5>
+                    {% endif %}
+                    {% if vaga.is_closed %}
+                    {% else %}
+                    {% if vaga.link_vaga != None %}
+                    <a class="btn btn-success rouded-button" href="{{ vaga.link_vaga }}" target="_blank" >Inscreva-se</a>
+                    {% endif %}
+                    {% endif %}
+                    <a class="btn btn-success  rouded-button" href="{{vaga.pdf}}" target="_blank">Detalhes</a>  
+                </div>
+                
+            </div>
+            
+           
+            
+            
+            
+        </section>
+    </div>
+    
+</div>
+{% endblock %}

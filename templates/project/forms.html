@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load bootstrap %}
+{% load widget_tweaks %}
+
+<div class="content-section p-3 mb-5 mt-2 bg-white class-rouder">
+    <section class="container col-8 teste-container">
+        <form class="form-teste" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <legend class="border-bottom mb-4 d-flex justify-content-center">
+                <h2>Cadastro</h2>
+            </legend>
+            {{ form.professor }}
+            {% for aluno in form.aluno %}
+                {{ form.aluno }}
+            {% endfor %}
+            {% for field in form.visible_fields%}
+            <div class="form mb-2">
+                <label class="label-form text-label" for="{{ field.id_for_label }}">{{ field.label|safe }}</label>
+                {{ field|add_class:'form-control my-input-group' }}
+                {% if field.help_text %}
+                <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+                {% if field.help_texts %}
+                {{ field.help_texts|safe }}
+                {% endif %}
+            </div>
+            {% comment %} <div class="form-group">
+                <label for="{{ field.id_for_label|add_class }}">{{ field.label }}</label>
+                {{ field|add_class:'form-control' }}
+            </div> {% endcomment %}
+            {% for error in field.errors %}
+
+            {{ field.errors }}
+
+            {% endfor %}
+            {% endfor %}
+            <input type="submit" value="Ok" class="btn btn-success mt-2">
+        </form>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+version: '3.8'
+name: opportunity_full
+services:
+  pgdb:
+    image: "postgres:latest"
+    container_name: pgdb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - /volumes/pgdata:/var/lib/postgresql/data/
+      - ./migration/docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql 
+    # ports:
+    #   - "5432:5432"
+volumes:
+  pgdata:
+    driver: local
+  static_volume:

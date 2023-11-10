@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+{% block content %}
+
+
+<div class="container mt-3">
+    <!-- Create a Form -->
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <div class="content-section color-body class-rouder p-3 mt-4 mb-2">
+
+            <div class="container mt-3">
+                <section>
+                    <h1 class="title">{{ vaga.tituloVaga }}</h1>
+                    <div class="my-info-div">
+                        <div>
+                            {% if vaga.tipo_vaga == "PP" %}
+                            <h5><span>Tipo:</span> Projeto de Pesquisa</h5>
+                            {% elif vaga.tipo_vaga == "PE" %}
+                            <h5><span>Tipo:</span>Projeto de Extensão</h5>
+                            {% elif vaga.tipo_vaga == 'ES' %}
+                            <h5><span>Tipo: </span>Estágio</h5>
+                            {% elif vaga.tipo_vaga == 'PD' %}
+                            <h5><span>Tipo: </span>Projeto de desenvolvimento</h5>
+                            {% endif %}
+                            <h5><span>Período de inscrição: </span>{{ vaga.dataCadastro  }} <span>até</span> {{ vaga.dataFechamento   }}</h5>
+                            <h5><span>Horas semanais:</span>  {{ vaga.horasSemana }} horas</h5>
+                            <h5><span>Número de vagas:</span> {{ vaga.numeroVagas }} vagas</h5>
+                            <h5><span>Valor da bolsa:</span> R$ {{ vaga.valorSalario|floatformat:2|intcomma }} reais</h5>
+                            <a class="btn btn-success rouded-button" href="{{vaga.pdf.url}}" download>Detalhes</a>  
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+            <div>
+                <div class="d-flex justify-content-center mt-2 div-center-delete">
+                    <h2 class="text-danger">Deseja Deletar esse item? </h2>
+                </div>
+                <div class="d-flex justify-content-center w">
+                    <input type="submit" class="w-25 btn btn-success" value="Sim" />
+                    <a class="w-25 btn btn-danger mx-4" href="{% url 'minhas_vagas' %}">Cancelar </a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
